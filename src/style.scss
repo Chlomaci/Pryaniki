@@ -1,0 +1,11 @@
+.login{
+    &__subtitle{
+        font-size: 20px;
+    }
+    &__input:focus{
+        outline: none;
+    }
+    &__error{
+        color: red;
+    }
+}
