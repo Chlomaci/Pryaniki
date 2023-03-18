@@ -36,6 +36,8 @@ import { useHttp } from "./http/http.hook"
                     state.loadingStatus = 'idle';
                     localStorage.setItem('isLogged', true);
                     localStorage.setItem('token', action.payload);
+                    state.isLogged = localStorage.getItem('isLogged');
+                    state.token = localStorage.getItem('token');
                 })
                 .addCase(fetchAuth.rejected, state => {
                     state.loadingStatus = 'error';

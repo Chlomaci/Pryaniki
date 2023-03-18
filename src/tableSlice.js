@@ -4,14 +4,8 @@ import { useHttp } from "./http/http.hook"
 
     const initialState = {
         id: [],
-        documentStatus: [],
-        employeeNumber: [],
-        documentType: [],
-        documentName: [],
-        companySignatureName: [],
-        employeeSignatureName: [],
-        employeeSigDate: [],
-        companySigDate: []
+        rows: [],
+        loading: 'idle',
     };
 
 
@@ -31,43 +25,66 @@ import { useHttp } from "./http/http.hook"
         }
     );
 
-    // export const fetchEditData = createAsyncThunk(
-    //     'table/fetchEditData',
-    //     async (data) => {
-    //         const {onDataEditing} = useHttp();
-    //         return await onDataEditing(data);
-    //     }
-    // );
+    export const fetchDeleteData = createAsyncThunk(
+        'table/fetchDeleteData',
+        async (data) => {
+            const {onDataDelete} = useHttp();
+            return await onDataDelete(data);
+        }
+    );
+
+    export const fetchEditData = createAsyncThunk(
+        'table/fetchEditData',
+        async (data) => {
+            const {onDataEditing} = useHttp();
+            return await onDataEditing(data);
+        }
+    );
 
     const tableSlice = createSlice({
         name: 'table',
         initialState,
+        reducers: {
+            rowDeleted: (state, action) => {
+                state.rows = state.rows.filter((row) => row.id !== action.payload)
+            },
+            rowAdded: (state, action) => {
+                state.rows = [...state.rows, action.payload];
+            },
+            onCancelRow: (state) => {
+                state.rows = state.rows.filter((row) => row.documentName !== '');
+            }
+        },
         extraReducers: (builder) => {
             builder
-                .addCase(fetchData.pending, state => {state.loadingStatus = 'loading'})
+                .addCase(fetchData.pending, state => {state.loading="true"})
                 .addCase(fetchData.fulfilled, (state, action) => {
-                    state.loadingStatus = 'idle';
+                    state.loading = 'idle';
+                    state.rows = action.payload;
                     action.payload.map((item) => {
                         state.id.push(item.id);
-                        state.documentStatus.push(item.documentStatus);
-                        state.employeeNumber.push(item.employeeNumber);
-                        state.documentType.push(item.documentType);
-                        state.documentName.push(item.documentName);
-                        state.companySignatureName.push(item.companySignatureName);
-                        state.employeeSignatureName.push(item.employeeSignatureName);
-                        state.employeeSigDate.push(item.employeeSigDate);
-                        state.companySigDate.push(item.companySigDate);
                     })
                 })
                 .addCase(fetchData.rejected, state => {
-                    state.loadingStatus = 'error';
+                    state.loading='error';
                 })
+                .addCase(fetchDeleteData.pending, state => {state.loading="true"})
+                .addCase(fetchDeleteData.fulfilled, state => {state.loading="idle"})
+                .addCase(fetchDeleteData.rejected, state => {state.loading="error"})
+                .addCase(fetchAddData.pending, state => {state.loading="true"})
+                .addCase(fetchAddData.fulfilled, (state, action) => {
+                state.loading="idle"
+                state.id = [...state.id, action.payload.id];
+                state.rows = state.rows.filter((row) => row.documentName !== '');
+                state.rows = [...state.rows, action.payload];
+            })
+                .addCase(fetchAddData.rejected, state => {state.loading="error"})
                 .addDefaultCase(() => {})
         }
     });
 
     const {actions, reducer} = tableSlice;
 
-    // export const {nameChange, errorStatusChange} = actions;
+    export const {rowDeleted, rowAdded, onChangeUpdatedRow, onCancelRow} = actions;
 
     export default reducer;

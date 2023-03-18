@@ -2,6 +2,7 @@
   "name": "table",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Chlomaci/Pryaniki",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -9,11 +10,14 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
     "@mui/x-data-grid": "^6.0.1",
+    "@mui/x-data-grid-generator": "^6.0.2",
+    "@mui/x-data-grid-premium": "^6.0.2",
     "@mui/x-data-grid-pro": "^6.0.1",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^5.0.0",
     "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,6 +26,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
