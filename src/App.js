@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import LoginForm from './LoginForm.jsx'
-import Table from './Table.jsx';
+import LoginForm from './components/Login/LoginForm.jsx'
+import Table from './components/Table/Table.jsx'
 
 
 import './App.css';

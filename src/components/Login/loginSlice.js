@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import { useHttp } from "./http/http.hook"
+import { useHttp } from '../../http/http.hook'
 
 
     const initialState = {

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import login from '../loginSlice'
-import table from '../tableSlice'
+import login from '../components/Login/loginSlice'
+import table from '../components/Table/tableSlice'
 
 const store = configureStore({
     reducer: { login, table },

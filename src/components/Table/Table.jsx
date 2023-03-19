@@ -129,7 +129,6 @@ export default function Table() {
   }
  
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70, editable: true },
     { field: 'documentStatus', headerName: 'documentStatus', width: 130, editable: true,},
     { field: 'employeeNumber', headerName: 'employeeNumber', type: 'number', width: 100, editable: true},
     { field: 'documentType', headerName: 'documentType', width: 130, editable: true },
@@ -194,7 +193,7 @@ export default function Table() {
     <Box
       sx={{
         height: 500,
-        width: '71%',
+        width: '69%',
         '& .actions': {
           color: 'text.secondary',
         },
@@ -206,7 +205,7 @@ export default function Table() {
       
 
       {(loading === 'true') ? 
-      <Box sx={{ display: 'flex', 'justify-content': 'center', 'align-items': 'center'}}>
+      <Box sx={{ display: 'flex', 'justifyContent': 'center', 'alignItems': 'center'}}>
         <CircularProgress />
       </Box>   
       : <DataGridPro
