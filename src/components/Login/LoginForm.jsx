@@ -51,6 +51,9 @@ const LoginForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if( e.code === 'Enter' && error ){
+            return
+        }
         dispatch(fetchAuth({url: `${HOST}/ru/data/v3/testmethods/docs/login`, username: username}))
     }
 
