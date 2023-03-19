@@ -193,7 +193,7 @@ export default function Table() {
     <Box
       sx={{
         height: 500,
-        width: '69%',
+        width: '100vw',
         '& .actions': {
           color: 'text.secondary',
         },
