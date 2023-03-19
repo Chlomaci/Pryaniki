@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Chlomaci/pryaniki/static/css/main.7c2e1a6c.css",
+    "main.js": "/Chlomaci/pryaniki/static/js/main.92434543.js",
+    "index.html": "/Chlomaci/pryaniki/index.html",
+    "main.7c2e1a6c.css.map": "/Chlomaci/pryaniki/static/css/main.7c2e1a6c.css.map",
+    "main.92434543.js.map": "/Chlomaci/pryaniki/static/js/main.92434543.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c2e1a6c.css",
+    "static/js/main.92434543.js"
+  ]
+}
