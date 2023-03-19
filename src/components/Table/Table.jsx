@@ -130,7 +130,7 @@ export default function Table() {
  
   const columns = [
     { field: 'documentStatus', headerName: 'documentStatus', width: 130, editable: true,},
-    { field: 'employeeNumber', headerName: 'employeeNumber', type: 'number', width: 100, editable: true},
+    { field: 'employeeNumber', headerName: 'employeeNumber', width: 100, editable: true},
     { field: 'documentType', headerName: 'documentType', width: 130, editable: true },
     { field: 'documentName', headerName: 'documentName', width: 130, editable: true },
     { field: 'companySignatureName', headerName: 'companySignatureName', width: 150, editable: true },
