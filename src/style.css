@@ -6,4 +6,13 @@
 }
 .login__error {
   color: red;
+}
+
+.css-1usso8h-MuiDataGrid-root {
+  background-color: #eceff1 !important;
+}
+
+.add__form {
+  display: flex;
+  margin-top: 1vw;
 }/*# sourceMappingURL=style.css.map */

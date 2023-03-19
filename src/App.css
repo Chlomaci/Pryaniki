@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.css-1usso8h-MuiDataGrid-root {
+  background-color: #eceff1!important;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
