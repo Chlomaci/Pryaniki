@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 
-div .uiDataGrid-root .MuiDataGrid-root--densityStandard .MuiDataGrid-withBorderColor .css-1usso8h-MuiDataGrid-root {
+.MuiDataGrid-root.MuiDataGrid-root--densityStandard.MuiDataGrid-withBorderColor {
   background-color: #eceff1!important;
 }
 
